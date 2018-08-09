@@ -1,40 +1,26 @@
 <template>
     <div class="zap-slideout" :class="{ isOpen: isOpen }">
-    <div class="zap-slideout-opener" @click="toggle">{{openerText}}</div>
-    <ul class="zap-slideout-menu">
-      <li class="zap-slideout-menu-item">
-        <img class="zap-emoji" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/19332/zap-emoji.svg" alt="Zap Emoji" />
-      </li>
-      <li class="zap-slideout-menu-item" v-for="item in menu" :key="item">{{item}}</li>
-      <li class="zap-slideout-menu-item--small" v-for="item in smallMenu" :key="item">{{item}}</li>
-    </ul>
-  </div>
+        <div class="zap-slideout-opener" @click="toggle">Filtre</div>
+        <form method="get">
+            <input type="text" id="nom" name="nom" required>
+            <button type="submit" value="Submit">chercher</button>
+        </form>
+        <button @click="reset">Supprimer recherche</button>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'Sidebar',
     data: () => ({
-        openerText: 'Open',
-        isOpen: false,
-        menu: ['Home', 'Work', 'Contact'],
-        smallMenu: ['Tips', 'Resources', 'Shenanigans']
+        isOpen: false
     }),
     methods: {
-        open() {
-            this.openerText = 'Close';
-            this.isOpen = true;
-        },
-        close() {
-            this.openerText = 'Open';
-            this.isOpen = false;
-        },
         toggle() {
-            if (this.isOpen) {
-                this.close();
-            } else {
-                this.open();
-            }
+            this.isOpen = !this.isOpen;
+        },
+        reset() {
+            window.location.href = window.location.href.split('?')[0];
         }
     }
 };
@@ -69,47 +55,5 @@ export default {
 
 .zap-slideout-opener:hover {
     text-decoration: underline;
-}
-
-.zap-slideout-menu {
-    font-weight: 600;
-    color: #fff;
-}
-
-.zap-slideout-menu-item,
-.zap-slideout-menu-item--small {
-    cursor: pointer;
-}
-
-.zap-slideout-menu-item:hover {
-    text-decoration: underline;
-}
-
-.zap-slideout-menu-item--small:hover {
-    text-decoration: underline;
-}
-
-.zap-slideout-menu-item + .zap-slideout-menu-item--small {
-    margin-top: 20px;
-}
-
-.zap-slideout-menu-item {
-    font-size: 36px;
-}
-
-.zap-slideout-menu-item + .zap-slideout-menu-item--small {
-    margin-top: 30px;
-}
-
-.zap-slideout-menu-item--small {
-    font-size: 18px;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #ecf0f1;
-}
-
-.zap-emoji {
-    height: 120px;
 }
 </style>
