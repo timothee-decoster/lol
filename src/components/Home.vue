@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <router-link :to="`/`" tag="div"><img src="@/assets/border.png" alt="border champ" width="10%" height="10%"></router-link>
-        <router-link :to="`/`" tag="div"><img src="@/assets/border.png" alt="border champ" width="10%" height="10%"></router-link>
+    <div class="home">
+        <router-link class="champ" :to="`/`" tag="div"><img src="@/assets/border.png" alt="border champ" width="100%" height="100%"></router-link>
+        <router-link class="champ" :to="`/`" tag="div"><img src="@/assets/border.png" alt="border champ" width="100%" height="100%"></router-link>
         
         <h1 class="title">
-            Nom : <pre>{{ nom }}</pre>
+            Nom : {{ nom }}
         </h1>
     </div>
 </template>
@@ -33,6 +33,16 @@ export default {
 </script>
 
 <style>
+.home {
+    display: flex;
+}
+
+.champ {
+    position: relative;
+    width: 10%;
+    height: 10%;
+}
+
 .title {
     font-size: 24px;
     font-weight: 600;

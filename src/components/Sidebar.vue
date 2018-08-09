@@ -30,7 +30,6 @@ export default {
 .zap-slideout {
     position: relative;
     width: 240px;
-    height: 100vh;
     padding: 30px;
     background-color: #34495e;
     transform: translateX(-100%);

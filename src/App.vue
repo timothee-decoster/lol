@@ -23,10 +23,5 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #fff;
     background-color: #2c3e50;
-    -webkit-font-smoothing: antialiased;
-}
-
-* {
-    box-sizing: border-box;
 }
 </style>

@@ -13,7 +13,6 @@ export default {
 <style>
 .content {
     top: 65px;
-    left: 100px;
-    position: absolute;
+    position: absolute
 }
 </style>
