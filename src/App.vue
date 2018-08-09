@@ -1,16 +1,18 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <Sidebar/>
-  </div>
+    <div id="app">
+        <Content/>
+        <Sidebar/>
+    </div>
 </template>
 
 <script>
+import Content from './components/Content';
 import Sidebar from './components/Sidebar';
 
 export default {
     name: 'App',
     components: {
+        Content,
         Sidebar
     }
 };
